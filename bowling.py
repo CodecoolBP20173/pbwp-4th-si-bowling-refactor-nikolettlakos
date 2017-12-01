@@ -1,3 +1,14 @@
+def get_value(char):
+    if char in "123456789":
+        return int(char)
+    elif char.lower() == 'x' or char == '/':
+        return 10
+    elif char == '-':
+        return 0
+    else:
+        raise ValueError()
+
+
 def score(game):
     result = 0
     frame = 1
@@ -31,14 +42,3 @@ def score(game):
             frame += 1
             
     return result
-
-
-def get_value(char):
-    if char in "123456789":
-        return int(char)
-    elif char.lower() == 'x' or char == '/':
-        return 10
-    elif char == '-':
-        return 0
-    else:
-        raise ValueError()
