@@ -1,9 +1,9 @@
-def get_value(char):
-    if char in "123456789":
-        return int(char)
-    elif char.lower() == 'x' or char == '/':
+def get_value(character):
+    if character in "123456789":
+        return int(character)
+    elif character.lower() == 'x' or character == '/':
         return 10
-    elif char == '-':
+    elif character == '-':
         return 0
     else:
         raise ValueError()
