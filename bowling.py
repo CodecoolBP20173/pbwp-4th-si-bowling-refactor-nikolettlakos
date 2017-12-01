@@ -14,31 +14,31 @@ def score(game):
     frame = 1
     in_first_half = True
     
-    for i in range(len(game)):
-        if game[i] == '/':
+    for x in range(len(game)):
+        if game[x] == '/':
             result += 10 - last
         else:
-            result += get_value(game[i])
+            result += get_value(game[x])
 
-        if frame < 10 and get_value(game[i]) == 10:
-            if game[i] == '/':
-                result += get_value(game[i+1])
-            elif game[i].lower() == "x":
-                result += get_value(game[i+1])
+        if frame < 10 and get_value(game[x]) == 10:
+            if game[x] == '/':
+                result += get_value(game[x+1])
+            elif game[x].lower() == "x":
+                result += get_value(game[x+1])
 
-                if game[i+2] == '/':
-                    result += 10 - get_value(game[i+1])
+                if game[x+2] == '/':
+                    result += 10 - get_value(game[x+1])
                 else:
-                    result += get_value(game[i+2])
+                    result += get_value(game[x+2])
 
-        last = get_value(game[i])
+        last = get_value(game[x])
 
         if not in_first_half:
             frame += 1
 
         in_first_half = not in_first_half
 
-        if game[i].lower() == 'x':
+        if game[x].lower() == 'x':
             in_first_half = True
             frame += 1
             
